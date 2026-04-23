@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="dashboard">
+    <header class="topbar">
+      <div>
+        <span class="overline" data-i18n="panelLabel">Admin panel</span>
+        <h1 data-i18n="title">User Dashboard</h1>
+        <p class="subtitle" data-i18n="description">
+          View users, search by name, filter by city, and check details.
+        </p>
+      </div>
+
+      <div class="language-switcher">
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
+        <button class="lang-btn" data-lang="pt" type="button">PT</button>
+      </div>
+    </header>
+
+    <section class="summary-row">
+      <article class="summary-card">
+        <span class="summary-label" data-i18n="totalUsers">Total users</span>
+        <strong class="summary-value" id="totalUsersValue">0</strong>
+      </article>
+
+      <article class="summary-card">
+        <span class="summary-label" data-i18n="cities">Cities</span>
+        <strong class="summary-value" id="totalCitiesValue">0</strong>
+      </article>
+
+      <article class="summary-card">
+        <span class="summary-label" data-i18n="companies">Companies</span>
+        <strong class="summary-value" id="totalCompaniesValue">0</strong>
+      </article>
+    </section>
+
+    <section class="toolbar">
+      <div class="toolbar-group">
+        <label for="searchInput" data-i18n="searchLabel">Search user</label>
+        <input
+          type="text"
+          id="searchInput"
+          data-i18n-placeholder="searchPlaceholder"
+          placeholder="Type a name"
+        />
+      </div>
+
+      <div class="toolbar-group">
+        <label for="cityFilter" data-i18n="cityLabel">City</label>
+        <select id="cityFilter"></select>
+      </div>
+    </section>
+
+    <section class="users-section">
+      <div class="section-header">
+        <h2 data-i18n="userList">User list</h2>
+        <span id="loadedUsersText"></span>
+      </div>
+
+      <div id="usersContainer" class="users-grid"></div>
+    </section>
+  </main>
+
+  <div id="userModal" class="modal-overlay hidden">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <span class="modal-overline" id="modalOverline">User details</span>
+          <h3 id="modalName">Name</h3>
+          <p id="modalCompany">Company</p>
+        </div>
+
+        <div class="modal-header-actions">
+          <span id="modalStatus" class="status-badge">Active</span>
+
+          <button id="closeModalBtn" class="modal-close" type="button" aria-label="Close">
+            ×
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-info-grid">
+          <div class="modal-info-item">
+            <span id="modalEmailLabel">Email</span>
+            <strong id="modalEmail"></strong>
+          </div>
+
+          <div class="modal-info-item">
+            <span id="modalPhoneLabel">Phone</span>
+            <strong id="modalPhone"></strong>
+          </div>
+
+          <div class="modal-info-item">
+            <span id="modalCityLabel">City</span>
+            <strong id="modalCity"></strong>
+          </div>
+
+          <div class="modal-info-item">
+            <span id="modalUsernameLabel">Username</span>
+            <strong id="modalUsername"></strong>
+          </div>
+
+          <div class="modal-info-item">
+            <span id="modalRoleLabel">Role</span>
+            <strong id="modalRole"></strong>
+          </div>
+
+          <div class="modal-info-item">
+            <span id="modalDepartmentLabel">Department</span>
+            <strong id="modalDepartment"></strong>
+          </div>
+
+          <div class="modal-info-item">
+            <span id="modalJoinedAtLabel">Joined at</span>
+            <strong id="modalJoinedAt"></strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
