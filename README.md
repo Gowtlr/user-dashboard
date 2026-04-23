@@ -1,6 +1,6 @@
 # User Dashboard
 
-Bilingual user dashboard built with HTML, CSS, and JavaScript.
+A bilingual user dashboard built with HTML, CSS, and JavaScript.
 
 ## Overview
 
@@ -29,5 +29,4 @@ This project is a responsive administrative dashboard for user management. It al
 ├── index.html
 ├── style.css
 ├── script.js
-└── README.md# user-dashboard
-Bilingual user dashboard built with HTML, CSS and JavaScript
+└── README.md
